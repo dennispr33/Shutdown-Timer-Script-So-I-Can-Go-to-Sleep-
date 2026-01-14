@@ -4,6 +4,7 @@ Deutsch
 
 Beschreibung:
 Ein einfaches, aber effektives Batch-Skript für Windows, mit dem sich ein Timer für das Herunterfahren des PCs setzen lässt. Ideal für Situationen, in denen man Downloads oder Uploads (z. B. YouTube-Videos) laufen lassen möchte, während man schlafen geht.
+
 Features:
 - Einfache Eingabe: Gib einfach die Minuten bis zum Herunterfahren ein.
 - Toggle-Funktion: Wenn bereits ein Timer läuft, bricht das erneute Starten des Skripts diesen automatisch ab.
