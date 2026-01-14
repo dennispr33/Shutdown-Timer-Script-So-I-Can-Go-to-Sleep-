@@ -1,0 +1,43 @@
+@echo off
+title PC Shutdown Manager
+color 0B
+cls
+
+:: Versuchen, einen bestehenden Timer abzubrechen
+shutdown /a >nul 2>&1
+
+:: Wenn der Abbruch erfolgreich war (Errorlevel 0), lief ein Timer
+if %errorlevel% equ 0 (
+    echo ==================================================
+    echo   STOPP: Laufender Timer wurde ABGEBROCHEN!
+    echo ==================================================
+    echo Der PC wird nun NICHT mehr automatisch heruntergefahren.
+    echo.
+    echo Druecke eine Taste zum Beenden.
+    pause >nul
+    exit
+)
+
+:: Wenn kein Timer lief, wird ein neuer erstellt
+echo ==================================================
+echo           PC SHUTDOWN-TIMER SETZEN
+echo ==================================================
+echo.
+set /p mins="In wie vielen Minuten soll der PC ausgehen?: "
+
+:: Berechnung von Minuten in Sekunden
+set /a secs=%mins%*60
+
+:: Timer starten
+shutdown /s /t %secs%
+
+cls
+echo ==================================================
+echo   ERFOLG: Timer auf %mins% Minuten gesetzt!
+echo ==================================================
+echo.
+echo Der PC schaltet sich automatisch aus. 
+echo Zum Abbrechen einfach dieses Skript erneut starten.
+echo.
+echo Druecke eine Taste, um dieses Fenster zu schliessen.
+pause >nul
